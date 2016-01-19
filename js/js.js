@@ -7,6 +7,7 @@ $('#nav').affix({
 });
 });
 
+
 /* highlight the top nav as scrolling occurs */
 $('body').scrollspy({ target: '#nav' })
 

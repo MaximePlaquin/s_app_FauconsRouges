@@ -1,5 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Kreon:400,700);
 
+
+@font-face {
+font-family: 'blogger-sans'
+src: url('blogger-sans/Blogger_Sans.otf');
+
+
+}
 html,
 body {
   height: 100%;
@@ -10,6 +17,25 @@ body {
 
 }
 
+div h1{
+
+
+  font-family: cursive;
+}
+
+.paragraphe{
+
+  font-family: blogger-sans;
+  font-size: 20px;
+
+}
+
+.img{
+  width: auto;
+	height: 450px;
+
+
+}
 
 
 .btn {
