@@ -9,7 +9,7 @@
 
 
 
-      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
       <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="js/instafeed.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
@@ -32,7 +32,7 @@
 
 
 </head>
-<body ng-app="app" onload="initialize()">
+<body onload="initialize()">
 <!-- Wrap all page content here -->
 <div id="wrap">
 
@@ -86,7 +86,7 @@
          <div class="container">
              <div class="row">
                  <div ng-controller="MainCtrl">
-                     <h1 class="text-center">{{name}}</h1>
+                     <h1 class="text-center"> Jennifer </h1>
                      <p class="text-center">Dirigeante du bar</p>
                  </div>
              </div>
@@ -119,7 +119,7 @@ Unde Rufinus ea tempestate praefectus praetorio ad discrimen trusus est ultimum.
 
 <div class="container">
   <div class="col-md-12">
-       <h1></h1>
+
 
       <div class="well-none">
           <div id="myCarousel" class="carousel slide">
@@ -322,32 +322,7 @@ Unde Rufinus ea tempestate praefectus praetorio ad discrimen trusus est ultimum.
   <h1 class="text-center">Où vous situez-vous dans le monde ?</h1>
 
   <div id="map-canvas">
-    <script type="text/javascript">
-    function initialize() {
-    map = new google.maps.Map(document.getElementById("map_canvas"), {
-          zoom: 19,
-          center: new google.maps.LatLng(48.858565, 2.347198),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
-  }
 
-  if (navigator.geolocation)
-    var watchId = navigator.geolocation.watchPosition(successCallback,
-                              null,
-                              {enableHighAccuracy:true});
-  else
-    alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
-
-  function successCallback(position){
-    map.panTo(new google.maps.LatLng(50.2859168, 2.787747299999978));
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(50.2859168, 2.787747299999978),
-      map: map,
-      title: 'Les faucons Rouges'
-    });
-  }
-
-  </script>
 </div>
 
   <hr>
@@ -377,7 +352,7 @@ Unde Rufinus ea tempestate praefectus praetorio ad discrimen trusus est ultimum.
       </div>
       <div class="row form-group">
           <div class="col-xs-10">
-            <button class="btn btn-primary pull-right">Contactez-Nous</button>
+            <button class="btn btn-primary pull-right"> <a href="mailto:toto@gmail.com">Contactez-Nous</button>
           </div>
       </div>
 

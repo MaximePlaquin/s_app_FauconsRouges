@@ -7,7 +7,6 @@ $('#nav').affix({
 });
 });
 
-
 /* highlight the top nav as scrolling occurs */
 $('body').scrollspy({ target: '#nav' })
 
@@ -27,6 +26,7 @@ $('#nav .navbar-nav li>a').click(function(){
 })
 });
 
+
 /* google maps */
 
 // enable the visual refresh
@@ -34,48 +34,26 @@ google.maps.visualRefresh = true;
 
 var map;
 function initialize() {
-  var mapOptions = {
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-  	// try HTML5 geolocation
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: pos,
-        content: 'Location found using HTML5.'
-      });
-
-      map.setCenter(pos);
-    }, function() {
-      handleNoGeolocation(true);
+map = new google.maps.Map(document.getElementById("map-canvas"), {
+      zoom: 19,
+      center: new google.maps.LatLng(48.858565, 2.347198),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-  } else {
-    // browser doesn't support geolocation
-    handleNoGeolocation(false);
-  }
 }
 
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
-  }
+if (navigator.geolocation)
+var watchId = navigator.geolocation.watchPosition(successCallback,
+                          null,
+                          {enableHighAccuracy:true});
+else
+alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
 
-  var options = {
-    map: map,
-    position: new google.maps.LatLng(60, 105),
-    content: content
-  };
-
-  var infowindow = new google.maps.InfoWindow(options);
-  map.setCenter(options.position);
+function successCallback(position){
+map.panTo(new google.maps.LatLng(50.2859168, 2.787747299999978));
+var marker = new google.maps.Marker({
+  position: new google.maps.LatLng(50.2859168, 2.787747299999978),
+  map: map,
+  title: 'Les faucons Rouges'
+});
 }
 google.maps.event.addDomListener(window, 'load', initialize);
